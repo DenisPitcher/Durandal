@@ -130,7 +130,9 @@ define(['durandal/system', 'durandal/composition', 'jquery', 'knockout'], functi
                 settings.view = this.mapKindToViewId(settings.kind);
             }
 
-            settings.preserveContext = true;
+            if (settings.preserveContext === undefined) {
+                settings.preserveContext = true;
+            }
             settings.activate = true;
             settings.activationData = settings;
             settings.mode = 'templated';
